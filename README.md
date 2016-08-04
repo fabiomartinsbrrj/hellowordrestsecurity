@@ -41,6 +41,10 @@ ou pela linha de comando
 
  curl -i -u 'colocar usuario:colocar a senha' -H "Content-Length: 0" -X POST http://localhost:8080/jboss-helloworld/services/companies/tasks/task1
   
+Se usar o usuario msilva vai conseguir acessar todos os serviços da role user_role
 
+Se usar o usuario rmacedo vai conseguir acessar todos os serviços da role admin_role
+
+Qualquer outro usuario vai ser negado o acesso
 
 
