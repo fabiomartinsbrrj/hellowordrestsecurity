@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+ 
+     <!-- <servlet-mapping>
+        <servlet-name>javax.ws.rs.core.Application</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping> -->
+    
+    <context-param>
+        <param-name>resteasy.role.based.security</param-name>
+        <param-value>true</param-value>
+    </context-param>  
+ 
+    <security-constraint> 
+        <web-resource-collection>
+            <web-resource-name>JBoss Application</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint> 
+            <role-name>user_role</role-name>
+            <role-name>admin_role</role-name>
+        </auth-constraint>
+    </security-constraint>
+ 
+    
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>JBoss Application</realm-name>
+    </login-config>
+ 
+    
+    <security-role>
+        <description>The role a user needs to be allowed to log in to the application</description>
+        <role-name>user_role</role-name>
+    </security-role>
+    <security-role>
+        <description>Admin Role</description>
+        <role-name>admin_role</role-name>
+    </security-role>
+</web-app>
