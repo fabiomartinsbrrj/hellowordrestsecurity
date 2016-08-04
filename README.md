@@ -29,6 +29,7 @@ Configurar no JBOSS no standalone.xml
                     <authentication>
                         <login-module code="com.scipa.scorpios.security.MeuSimplesUsernamePasswordLoginModule" flag="required"/>
                     </authentication>
+                </security-domain>
 			....
         </subsystem>
         
@@ -38,9 +39,9 @@ URL: <http://localhost:8080/jboss-helloworld/services/companies/>.
 
 ou pela linha de comando
 
- curl -H "Accept: application/json" -u 'colocar usuario:colocar a senha' -X GET http://localhost:8080/jboss-helloworld/services/companies/tasks/1
+ curl -H "Accept: application/json" -u 'colocar usuario:qualquer senha' -X GET http://localhost:8080/jboss-helloworld/services/companies/tasks/1
 
- curl -i -u 'colocar usuario:colocar a senha' -H "Content-Length: 0" -X POST http://localhost:8080/jboss-helloworld/services/companies/tasks/task1
+ curl -i -u 'colocar usuario:qualquer senha' -H "Content-Length: 0" -X POST http://localhost:8080/jboss-helloworld/services/companies/tasks/task1
   
 Se usar o usuario msilva vai conseguir acessar todos os serviços da role user_role
 
