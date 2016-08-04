@@ -23,19 +23,14 @@ import javax.xml.bind.JAXB;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 @SuppressWarnings("serial")
-@XmlRootElement(name = "task")
+@XmlRootElement(name = "subTask")
 public class SubTask implements Serializable {
 
 	private Long id;
 
-	private String owner;
-
 	private String title;
-
-	private String naoLeva;
 
 	public SubTask() {
 	}
@@ -54,15 +49,6 @@ public class SubTask implements Serializable {
 		this.id = id;
 	}
 
-	@XmlAttribute
-	public String getOwner() {
-		return owner;
-	}
-
-	public void setOwner(final String owner) {
-		this.owner = owner;
-	}
-
 	@XmlElement
 	public String getTitle() {
 		return title;
@@ -72,16 +58,8 @@ public class SubTask implements Serializable {
 		this.title = title;
 	}
 
-	public static SubTask stringToTask(final String content) {
+	public static SubTask stringToSubTask(final String content) {
 		return JAXB.unmarshal(new StringReader(content), SubTask.class);
 	}
 
-	@XmlTransient
-	public String getNaoLeva() {
-		return naoLeva;
-	}
-
-	public void setNaoLeva(final String naoLeva) {
-		this.naoLeva = naoLeva;
-	}
 }

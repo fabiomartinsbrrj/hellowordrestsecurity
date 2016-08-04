@@ -36,7 +36,8 @@ Access the application
 ---------------------
 URL: <http://localhost:8080/jboss-helloworld/services/companies/>. 
 
-ou pela linha de comando 
+ou pela linha de comando
+
  curl -H "Accept: application/json" -u 'colocar usuario:colocar a senha' -X GET http://localhost:8080/jboss-helloworld/services/companies/tasks/1
 
  curl -i -u 'colocar usuario:colocar a senha' -H "Content-Length: 0" -X POST http://localhost:8080/jboss-helloworld/services/companies/tasks/task1

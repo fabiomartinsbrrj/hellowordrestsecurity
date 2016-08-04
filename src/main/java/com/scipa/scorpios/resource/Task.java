@@ -25,6 +25,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @SuppressWarnings("serial")
 @XmlRootElement(name = "task")
 public class Task implements Serializable {
@@ -36,6 +38,8 @@ public class Task implements Serializable {
 	private String title;
 
 	private String naoLeva;
+
+	private SubTask subTask;
 
 	public Task() {
 	}
@@ -77,11 +81,21 @@ public class Task implements Serializable {
 	}
 
 	@XmlTransient
+	@JsonIgnore
 	public String getNaoLeva() {
 		return naoLeva;
 	}
 
 	public void setNaoLeva(final String naoLeva) {
 		this.naoLeva = naoLeva;
+	}
+
+	@XmlElement
+	public SubTask getSubTask() {
+		return subTask;
+	}
+
+	public void setSubTask(final SubTask subTask) {
+		this.subTask = subTask;
 	}
 }

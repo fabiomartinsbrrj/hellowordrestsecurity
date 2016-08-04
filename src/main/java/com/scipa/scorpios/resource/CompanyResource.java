@@ -83,6 +83,10 @@ public class CompanyResource {
 		final Task task = new Task(taskTitle);
 		task.setId(500l);
 
+		final SubTask subtask = new SubTask("Teste sub task");
+		subtask.setId(4l);
+		task.setSubTask(subtask);
+
 		final String rawPath = info.getAbsolutePath().getRawPath().replace(task.getTitle(), task.getId().toString());
 		final UriBuilder uriBuilder = info.getAbsolutePathBuilder().replacePath(rawPath);
 		final URI uri = uriBuilder.build();
@@ -100,6 +104,9 @@ public class CompanyResource {
 		task.setId(id);
 		task.setOwner("Queijo");
 		task.setNaoLeva("Nao pode aparecer");
+		final SubTask subtask = new SubTask("Teste sub task");
+		subtask.setId(4l);
+		task.setSubTask(subtask);
 
 		return task;
 	}
